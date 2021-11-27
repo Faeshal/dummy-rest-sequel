@@ -17,7 +17,7 @@ app.get("/", (req, res, next) => {
   res.status(200).json({
     success: true,
     statusCode: "200",
-    message: "🌲🚚Welcome To DUMMY API",
+    message: "Welcome To DUMMY API",
   });
 });
 app.get("*", function (req, res) {
@@ -30,9 +30,9 @@ app.get("*", function (req, res) {
     // await sequelize.authenticate();
     await sequelize.sync();
     // await sequelize.sync({ alter: true });
-    log.info("MySQL Connected");
+    console.log("MySQL Connected");
   } catch (error) {
-    log.error("Database Connection Failure ", error);
+    console.error("Database Connection Failure ", error);
     process.exit(1);
   }
 })();
@@ -40,8 +40,8 @@ app.get("*", function (req, res) {
 // * Server Listen
 app.listen(PORT, (err) => {
   if (err) {
-    log.error(`Error : ${err}`);
+    console.error(`Error : ${err}`);
     process.exit(1);
   }
-  log.info(`Server is Running On Port : ${PORT}`);
+  console.log(`Server is Running On Port : ${PORT}`);
 });

@@ -19,6 +19,7 @@ exports.getCities = asyncHandler(async (req, res, next) => {
 // @desc    Create New cities
 // @access  Private
 exports.createCity = asyncHandler(async (req, res, next) => {
-  await City.created(req.body);
+  console.log("body:", req.body);
+  await City.create(req.body);
   res.status(201).json({ success: true, message: "created" });
 });
