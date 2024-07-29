@@ -6,6 +6,9 @@ const morgan = require("morgan");
 const cityRoutes = require("./route/city");
 const sequelize = require("./model/index");
 
+// test new branch
+// this is test feature
+
 app.use(express.json());
 
 app.use(morgan("dev"));
